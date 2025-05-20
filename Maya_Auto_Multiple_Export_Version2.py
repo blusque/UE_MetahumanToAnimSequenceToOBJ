@@ -4,8 +4,6 @@ import imp
 import json
 import maya.cmds as cmds
 
-
-
 #define the function to import the animation sequence from the selected json file
 def mgApplyFaceMocap(filePath):
     objLs = cmds.ls(sl=1)
@@ -49,7 +47,6 @@ def mgApplyFaceMocap(filePath):
     print('Applied Animation to Face Rig.')
 
 
-
 #define a function to get the frame value of the selected video
 def get_frame_numbers(filePath):
     # Read the contents of the file
@@ -67,7 +64,6 @@ def get_frame_numbers(filePath):
 
     length = len(parsed_data[first_key])
     return length
-
 
 
 #define a function to export the OBJ files into the destination
@@ -104,10 +100,6 @@ def export_obj_sequence(export_dir, frame_start, frame_end):
         print("Exported:", filename)
 
 
-
-
-
-
 def process_multiple_animation_sequences(sequence_dir, export_dir):
     #get the list of animation sequence files in the selected directory
     sequence_files = os.listdir(sequence_dir)
@@ -141,9 +133,8 @@ def process_multiple_animation_sequences(sequence_dir, export_dir):
             print("Skip the mismatched file: "+sequence)
 
 
-
-sequence_dir = "F:\\Jerry\\animation_sequences"
-export_dir = "F:\\Jerry\\Automation_Multiple_Maya_OBJ"
+sequence_dir = "H:\\datasets\\Fretlyn\\Face\\MetaHuman"
+export_dir = "H:\\datasets\\Fretlyn\\Face\\MetaHuman\\OBJ_Exports"
 
 #call the function
 process_multiple_animation_sequences(sequence_dir, export_dir)
